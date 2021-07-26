@@ -6,6 +6,7 @@ $db = require __DIR__ . '/db.php';
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
+    'language' => 'ru-Ru',
     'defaultRoute' => 'github/index',
     'bootstrap' => ['log'],
     'aliases' => [
@@ -51,7 +52,18 @@ $config = [
             'rules' => [
             ],
         ],
-
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => yii\i18n\PhpMessageSource::className(),
+                    'basePath'=> '@app/messages',
+                    'sourceLanguage' => 'ru-RU',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                    ]
+                ],
+            ]
+        ]
     ],
     'params' => $params,
 ];

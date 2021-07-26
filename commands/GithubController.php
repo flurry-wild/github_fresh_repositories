@@ -27,8 +27,12 @@ class GithubController extends Controller
 
     public function actionIndex()
     {
-        echo 'Parsing of repositories started' . "\n";
+        $start = microtime(true);
+
+        echo 'Parsing of repositories started' . PHP_EOL;
         $this->githubUserService->parseRepositories();
+
+        echo 'Скрипт был выполнен за ' . (microtime(true) - $start) . ' секунд' . PHP_EOL;
 
         return ExitCode::OK;
     }

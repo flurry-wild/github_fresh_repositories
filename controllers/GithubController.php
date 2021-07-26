@@ -26,9 +26,13 @@ class GithubController extends Controller
     {
         $userName = Yii::$app->request->post('user');
 
-        GithubUser::create($userName);
+        $githubUser = GithubUser::create($userName);
 
-        Yii::$app->response->redirect(Url::to('/github/index'));
+        Yii::$app->response->redirect(Url::to([
+            '/github/index',
+            'githubUserName' => $githubUser->name,
+            'errors' => $githubUser->errors,
+        ]));
     }
 
     /**

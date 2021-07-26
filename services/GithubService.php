@@ -15,6 +15,21 @@ class GithubService
     const URL_PREFIX = 'https://github.com';
 
     /**
+     * @var ParseService
+     */
+    protected $parseService;
+
+    /**
+     * GithubService constructor.
+     *
+     * @param ParseService $parseService
+     */
+    public function __construct(ParseService $parseService)
+    {
+        $this->parseService = $parseService;
+    }
+
+    /**
      * @throws \yii\db\Exception
      *
      * return void
@@ -127,20 +142,6 @@ class GithubService
      */
     public function parseContainer($dom, array $containers): simple_html_dom_node
     {
-        $input = $dom;
-        foreach ($containers as $container) {
-            if (!isset($container['tag'])) {
-                $tag = $container;
-                $container = [
-                    'tag' => $tag,
-                    'key' => 0,
-                ];
-            }
-
-            $input = $input->find($container['tag'])[$container['key']];
-            if (empty($input)) throw new Exception();
-        }
-
-        return $input;
+        return $this->parseService->parseContainer($dom, $containers);
     }
 }

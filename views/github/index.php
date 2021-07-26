@@ -17,6 +17,15 @@ $this->title = 'Github Users';
         <input type="text" name="user">
         <input type="submit" value="Добавить" class="btn btn-primary">
     </form>
+    <?php
+    $errors = $_GET['errors'];
+    if (!empty($errors)) {
+        foreach ($errors as $attr) {
+            foreach ($attr as $error) { ?>
+    <?= Html::encode($error) ?>
+    <?php   }
+        }
+    } ?>
 
     <div class="github-user-list col-md-6">
         <ul class="list-group">
