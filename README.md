@@ -6,5 +6,5 @@
 Форма добавления пользователя github
 <p align="center"><img src="https://github.com/maxim246/github_fresh_repositories/blob/first-version/web/readme-images/image1.png" width=400></img></p>
 Каждые 10 минут сервер парсит репозитории пользователей, формируя в бд список всех репозиториев с датами последних обновлений реозиториев на гитхабе.
-На отдельноцй странице можно просмотреть список последних 10 обновленных репозиториев в порядке обновлений с датами последних обновлений на гитхабе.
+На отдельной странице (http://localhost/github/repository-index) можно просмотреть список последних 10 обновленных репозиториев в порядке обновлений с датами последних обновлений на гитхабе.
 <p align="center"><img src="https://github.com/maxim246/github_fresh_repositories/blob/first-version/web/readme-images/image2.png" width=400></img></p>
