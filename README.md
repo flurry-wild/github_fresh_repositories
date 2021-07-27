@@ -4,4 +4,4 @@
 Примечание: нужно показывать 10 последних репозиториев из общего списка репозиториев пользователей, а НЕ 10 последних репозиториев каждого из пользователей. 
 
 Форма добавления пользователя github
-<img src="https://github.com/maxim246/github_fresh_repositories/readme-images/image1.png" width=400></img>
+<img src="https://github.com/maxim246/github_fresh_repositories/blob/vendor/web/readme-images/image1.png" width=400></img>
